@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'todoapp',
 ]
 
 MIDDLEWARE = [
@@ -73,10 +74,27 @@ WSGI_APPLICATION = 'myapp.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'todoapp',  # データベース名
+        'USER': 'root',  # MySQLのユーザー名
+        'PASSWORD': 'naoki0110',  # MySQLのパスワード
+        'HOST': 'localhost',  # MySQLのホスト名
+        'PORT': '3306',  # MySQLのポート番号
     }
 }
 
